@@ -1,0 +1,162 @@
+.season-tabs {
+    display: flex;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xl);
+}
+
+.season-tab {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius-lg);
+    background: var(--bg-card);
+    border: 2px solid var(--border-color);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: all var(--transition-fast);
+}
+
+.season-tab:hover {
+    border-color: var(--primary-300);
+    background: var(--bg-hover);
+}
+
+.season-tab.active {
+    border-color: var(--primary-500);
+    background: linear-gradient(135deg, var(--primary-50), var(--primary-100));
+    color: var(--primary-700);
+}
+
+[data-theme="dark"] .season-tab.active {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.12), rgba(34, 197, 94, 0.06));
+    color: var(--primary-400);
+}
+
+.season-emoji {
+    font-size: 1.3rem;
+}
+
+.season-overview {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-lg);
+}
+
+.season-info h2 {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+}
+
+.season-info p {
+    font-size: var(--font-size-sm);
+    color: var(--text-tertiary);
+}
+
+.season-progress {
+    min-width: 200px;
+}
+
+.progress-text {
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: var(--primary-600);
+}
+
+[data-theme="dark"] .progress-text {
+    color: var(--primary-400);
+}
+
+.task-categories-row {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-lg);
+}
+
+.tasks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.task-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md) var(--space-lg);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+}
+
+.task-row:hover {
+    border-color: var(--primary-200);
+    transform: translateX(4px);
+}
+
+.task-row.done {
+    opacity: 0.5;
+}
+
+.task-row.done .checklist-text {
+    text-decoration: line-through;
+}
+
+.checkbox-wrapper {
+    cursor: pointer;
+}
+
+.task-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.task-meta-row {
+    display: flex;
+    gap: var(--space-md);
+    margin-top: 4px;
+}
+
+.task-plant {
+    font-size: var(--font-size-xs);
+    color: var(--primary-600);
+    font-weight: 500;
+}
+
+[data-theme="dark"] .task-plant {
+    color: var(--primary-400);
+}
+
+.task-due-date {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: var(--font-size-xs);
+    color: var(--text-tertiary);
+}
+
+@media (max-width: 640px) {
+    .season-tabs {
+        flex-wrap: wrap;
+    }
+
+    .season-tab {
+        flex: 1 1 45%;
+    }
+
+    .season-overview {
+        flex-direction: column;
+        gap: var(--space-md);
+        align-items: flex-start;
+    }
+
+    .season-progress {
+        width: 100%;
+    }
+}

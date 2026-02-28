@@ -1,0 +1,205 @@
+.layout-container {
+    display: flex;
+    gap: var(--space-xl);
+}
+
+.garden-grid {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    background: var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 2px;
+    overflow: hidden;
+}
+
+.grid-row {
+    display: flex;
+    gap: 2px;
+}
+
+.grid-cell {
+    flex: 1;
+    aspect-ratio: 1;
+    background: var(--bg-card);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    position: relative;
+    min-width: 80px;
+}
+
+.grid-cell:hover {
+    background: var(--bg-hover);
+}
+
+.grid-cell.selected {
+    outline: 2px solid var(--primary-500);
+    outline-offset: -2px;
+    z-index: 2;
+}
+
+.grid-cell.occupied {
+    background: var(--primary-50);
+}
+
+[data-theme="dark"] .grid-cell.occupied {
+    background: rgba(34, 197, 94, 0.08);
+}
+
+.cell-plant {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.cell-emoji {
+    font-size: 1.5rem;
+}
+
+.cell-name {
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.cell-add {
+    color: var(--neutral-300);
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.grid-cell:hover .cell-add {
+    opacity: 1;
+}
+
+.active-toggle {
+    background: var(--accent-100) !important;
+    color: var(--accent-700) !important;
+    border-color: var(--accent-300) !important;
+}
+
+[data-theme="dark"] .active-toggle {
+    background: rgba(245, 158, 11, 0.15) !important;
+    color: var(--accent-300) !important;
+}
+
+.sunlight-legend {
+    display: flex;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-md);
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+/* Sidebar */
+.layout-sidebar {
+    width: 260px;
+    flex-shrink: 0;
+}
+
+.layout-sidebar h3 {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--space-md);
+}
+
+.placed-plants-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.placed-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.placed-item:hover {
+    border-color: var(--primary-300);
+    background: var(--bg-hover);
+}
+
+.placed-name {
+    flex: 1;
+    font-weight: 500;
+}
+
+.placed-coord {
+    font-size: var(--font-size-xs);
+    color: var(--text-tertiary);
+}
+
+.empty-hint {
+    color: var(--text-tertiary);
+    font-size: var(--font-size-sm);
+    font-style: italic;
+}
+
+/* Info popup */
+.plant-info-popup {
+    position: fixed;
+    bottom: var(--space-xl);
+    right: var(--space-xl);
+    z-index: 50;
+    min-width: 240px;
+    animation: slideUp 0.3s ease;
+}
+
+/* Plant picker */
+.plant-picker-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-sm);
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.plant-pick-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: var(--space-md);
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    transition: all var(--transition-fast);
+    color: var(--text-primary);
+}
+
+.plant-pick-btn:hover {
+    background: var(--bg-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.plant-pick-btn span:first-child {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 900px) {
+    .layout-container {
+        flex-direction: column;
+    }
+
+    .layout-sidebar {
+        width: 100%;
+    }
+
+    .grid-cell {
+        min-width: 60px;
+    }
+}

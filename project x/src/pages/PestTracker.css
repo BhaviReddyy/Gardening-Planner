@@ -1,0 +1,112 @@
+.alert-banner {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-lg);
+    background: linear-gradient(135deg, var(--rose-50), var(--accent-50));
+    border: 1px solid var(--rose-100);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-lg);
+    color: var(--rose-500);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    animation: fadeInUp 0.4s ease;
+}
+
+[data-theme="dark"] .alert-banner {
+    background: linear-gradient(135deg, rgba(244, 63, 94, 0.1), rgba(245, 158, 11, 0.05));
+    border-color: rgba(244, 63, 94, 0.2);
+}
+
+.pest-card {
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.pest-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.pest-card-header {
+    display: flex;
+    gap: var(--space-md);
+    margin-bottom: var(--space-sm);
+}
+
+.pest-emoji {
+    font-size: 2rem;
+}
+
+.pest-card-header h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: 4px;
+}
+
+.pest-desc {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-sm);
+    line-height: 1.5;
+}
+
+.pest-affected {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.pest-label {
+    font-size: var(--font-size-xs);
+    color: var(--text-tertiary);
+    font-weight: 500;
+}
+
+/* Issues */
+.issues-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.issue-card {
+    transition: all var(--transition-fast);
+}
+
+.issue-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.issue-card.resolved {
+    opacity: 0.7;
+}
+
+.issue-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: var(--space-sm);
+}
+
+.issue-plant {
+    font-size: var(--font-size-xs);
+    color: var(--text-tertiary);
+}
+
+.issue-notes {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-md);
+}
+
+.issue-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.issue-date {
+    font-size: var(--font-size-xs);
+    color: var(--text-tertiary);
+}

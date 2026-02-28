@@ -1,0 +1,124 @@
+.garden-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+}
+
+.garden-stat {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    color: var(--primary-600);
+}
+
+[data-theme="dark"] .garden-stat {
+    color: var(--primary-400);
+}
+
+.garden-stat h3 {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.garden-stat p {
+    font-size: var(--font-size-xs);
+    color: var(--text-tertiary);
+}
+
+/* Plant card */
+.garden-plant-card {
+    transition: all var(--transition-base);
+}
+
+.garden-plant-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.garden-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: var(--space-sm);
+}
+
+.garden-plant-emoji {
+    font-size: 2.5rem;
+}
+
+.health-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+}
+
+.health-badge.great {
+    background: rgba(34, 197, 94, 0.1);
+    color: var(--health-great);
+}
+
+.health-badge.good {
+    background: rgba(132, 204, 22, 0.1);
+    color: var(--health-good);
+}
+
+.health-badge.fair {
+    background: rgba(234, 179, 8, 0.1);
+    color: var(--health-fair);
+}
+
+.health-badge.poor {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--health-bad);
+}
+
+.garden-plant-species {
+    font-size: var(--font-size-xs);
+    font-style: italic;
+    color: var(--text-tertiary);
+    margin-bottom: var(--space-sm);
+}
+
+.garden-plant-notes {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-md);
+    line-height: 1.5;
+}
+
+.garden-plant-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: var(--space-md);
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--font-size-xs);
+    color: var(--text-tertiary);
+}
+
+.health-bar-container {
+    margin-bottom: var(--space-md);
+}
+
+.garden-card-actions {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .garden-stats {
+        grid-template-columns: 1fr;
+    }
+}
